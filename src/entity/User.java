@@ -4,12 +4,23 @@ public class User {
     private int id;
     private String userName;
     private String passWord;
+    private String typeUser;
     public User(){};
     public User(int id, String userName, String passWord){
         this.id=id;
         this.userName = userName;
         this.passWord = passWord;
+        this.typeUser="user";
     }
+
+    public String getTypeUser() {
+        return typeUser;
+    }
+
+    public void setTypeUser(String typeUser) {
+        this.typeUser = typeUser;
+    }
+
     public int getId(){
         return this.id;
     }

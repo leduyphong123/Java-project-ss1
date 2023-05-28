@@ -6,7 +6,7 @@ import java.util.List;
 public class Category {
     private int idCategory;
     private String nameCategory;
-    static List<Product> listProduct = new ArrayList<>();
+    List<Product> listProduct = new ArrayList<>();
 
     public  List<Product> getListProduct() {
         return listProduct;

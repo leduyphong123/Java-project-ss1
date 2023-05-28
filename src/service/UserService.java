@@ -10,4 +10,6 @@ public interface UserService {
     void getAll();
 
     User viewCurrentUserInfor();
+
+    boolean logout();
 }

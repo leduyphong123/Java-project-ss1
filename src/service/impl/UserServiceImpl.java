@@ -11,8 +11,14 @@ public class UserServiceImpl implements UserService {
     static User currentUser;
     @Override
     public boolean register(User user) {
-        if(user ==null){
+        if(user ==null || user.getPassWord().length()<8){
             return false;
+        }
+
+        for (User list: listUser){
+            if (list.getUserName()== user.getUserName()){
+                return false;
+            }
         }
         listUser.add(user);
         return true;
@@ -39,5 +45,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public User viewCurrentUserInfor() {
         return this.currentUser;
+    }
+
+    @Override
+    public boolean logout() {
+        if (this.currentUser==null){
+            return false;
+        }
+        this.currentUser=null;
+        return true;
     }
 }
